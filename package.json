@@ -1,0 +1,22 @@
+{
+  "name": "fixmycampus",
+  "version": "1.0.0",
+  "description": "FixMyCampus - Smart Campus Complaint & Maintenance Tracker",
+  "scripts": {
+    "install:all": "npm --prefix server install && npm --prefix client install",
+    "dev:server": "npm --prefix server run dev",
+    "dev:worker": "npm --prefix server run worker:dev",
+    "dev:client": "npm --prefix client run dev",
+    "build": "npm --prefix client run build",
+    "build:client": "npm --prefix client run build",
+    "start": "npm --prefix server start",
+    "worker": "npm --prefix server run worker",
+    "migrate": "npm --prefix server run migrate",
+    "seed": "npm --prefix server run seed",
+    "create-admin": "npm --prefix server run create-admin",
+    "test": "npm --prefix server test"
+  },
+  "keywords": ["aws", "cloud-computing", "fullstack", "react", "express", "postgresql"],
+  "author": "FixMyCampus Team",
+  "license": "MIT"
+}

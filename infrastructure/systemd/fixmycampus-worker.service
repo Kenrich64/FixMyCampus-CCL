@@ -1,0 +1,18 @@
+[Unit]
+Description=FixMyCampus SQS/SNS Background Notification Worker
+After=network.target
+
+[Service]
+Type=simple
+User=ec2-user
+WorkingDirectory=/home/ec2-user/fixmycampus
+ExecStart=/usr/bin/node server/src/workers/notificationWorker.js
+Restart=always
+RestartSec=10
+Environment=NODE_ENV=production
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=fixmycampus-worker
+
+[Install]
+WantedBy=multi-user.target

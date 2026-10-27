@@ -1,0 +1,27 @@
+/* App.css — FixMyCampus application-level responsive overrides */
+/* All core design tokens and component styles live in index.css */
+
+/* Responsive two-column layout collapse for admin detail page */
+@media (max-width: 900px) {
+  /* Admin complaint detail: stack columns */
+  [style*="gridTemplateColumns: 1fr 320px"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Admin complaints filter: collapse grid */
+  [style*="gridTemplateColumns: 2fr repeat(3, 1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Form two-column split: collapse on mobile */
+  [style*="gridTemplateColumns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Admin dashboard charts grid: collapse on mobile */
+  [style*="gridTemplateColumns: repeat(auto-fit, minmax(420px, 1fr))"] {
+    grid-template-columns: 1fr !important;
+  }
+}

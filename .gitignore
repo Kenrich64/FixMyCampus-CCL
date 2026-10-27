@@ -1,0 +1,43 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Environment Variables & Secrets
+.env
+.env.*
+.env.txt
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.pem
+*.key
+labsuser.pem
+
+# Production build outputs
+dist/
+dist-ssr/
+build/
+client/dist/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS and Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Testing & Coverage
+coverage/
+.nyc_output/
+
+# Temporary files
+scratch/
+tmp/

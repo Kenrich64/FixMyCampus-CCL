@@ -1,0 +1,45 @@
+{
+  "name": "fixmycampus-server",
+  "version": "1.0.0",
+  "description": "FixMyCampus Backend API and SQS/SNS Background Worker",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/index.js",
+    "start": "node src/index.js",
+    "worker": "node src/workers/notificationWorker.js",
+    "worker:dev": "node --watch src/workers/notificationWorker.js",
+    "migrate": "node src/config/migrate.js",
+    "seed": "node src/config/seed.js",
+    "create-admin": "node src/config/createAdmin.js",
+    "test": "node --test tests/*.test.js"
+  },
+  "keywords": [
+    "aws",
+    "cloud-computing",
+    "complaint-tracker",
+    "express",
+    "postgresql"
+  ],
+  "author": "FixMyCampus Team",
+  "license": "MIT",
+  "dependencies": {
+    "@aws-sdk/client-cloudwatch-logs": "^3.758.0",
+    "@aws-sdk/client-s3": "^3.758.0",
+    "@aws-sdk/client-sns": "^3.758.0",
+    "@aws-sdk/client-sqs": "^3.758.0",
+    "@aws-sdk/client-ssm": "^3.758.0",
+    "@aws-sdk/s3-request-presigner": "^3.758.0",
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.13.3"
+  },
+  "devDependencies": {
+    "supertest": "^7.0.0"
+  }
+}
