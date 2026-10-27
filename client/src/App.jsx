@@ -20,8 +20,17 @@ import NotFoundPage from './pages/NotFoundPage';
 
 // Root Route: Public Landing Page for visitors, Dashboard for logged-in users
 function RootRoute() {
-  const { user, loading } = useAuth();
-  if (loading) return null;
+  const { user, loading, token } = useAuth();
+  // If no stored token, render LandingPage immediately without waiting
+  if (!token) return <LandingPage />;
+  if (loading) {
+    return (
+      <div className="loading-state" style={{ minHeight: '60vh' }}>
+        <div className="spinner" />
+        <span>Loading portal…</span>
+      </div>
+    );
+  }
   if (!user) return <LandingPage />;
   return <Navigate to={user.role === 'admin' ? '/admin/dashboard' : '/dashboard'} replace />;
 }
